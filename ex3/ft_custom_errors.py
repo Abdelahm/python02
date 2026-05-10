@@ -1,15 +1,15 @@
 class GardenError(Exception):
-    def __init__(self, message: str = "Unknown garden error") -> None:
+    def __init__(self, message: str = "Unknown Garden Error ") -> None:
         super().__init__(message)
 
 
 class PlantError(GardenError):
-    def __init__(self, message: str = "Unknown plant error") -> None:
+    def __init__(self, message: str = "Unknown Plant Error") -> None:
         super().__init__(message)
 
 
 class WaterError(GardenError):
-    def __init__(self, message: str = "Unknown water error") -> None:
+    def __init__(self, message: str = "Unknown Water Error") -> None:
         super().__init__(message)
 
 
@@ -23,18 +23,21 @@ def raise_water_error() -> None:
 
 def test_custom_errors() -> None:
     print("=== Custom Garden Errors Demo ===")
+    print()
 
     print("Testing PlantError...")
     try:
         raise_plant_error()
     except PlantError as error:
         print(f"Caught PlantError: {error}")
+        print()
 
     print("Testing WaterError...")
     try:
         raise_water_error()
     except WaterError as error:
         print(f"Caught WaterError: {error}")
+        print()
 
     print("Testing catching all garden errors...")
 
@@ -42,14 +45,22 @@ def test_custom_errors() -> None:
         raise_plant_error()
     except GardenError as error:
         print(f"Caught GardenError: {error}")
+        # print()
 
     try:
         raise_water_error()
     except GardenError as error:
         print(f"Caught GardenError: {error}")
+        print()
 
     print("All custom error types work correctly!")
 
 
 if __name__ == "__main__":
     test_custom_errors()
+
+# ==================================================================#
+# Python allows user-defined exceptions by creating classes that
+# inherit from Exception -- in this task we create our own custuom
+# errors after using Exception inheritance
+# ==================================================================#

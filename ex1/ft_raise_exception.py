@@ -41,7 +41,7 @@ if __name__ == "__main__":
 # ================================================================#
 # Exep [is a runtime Error Reporting mechanism][gives you the
 # message to understand the problem] [have types (syntaxErrot,
-# ValueError, etc)] -- we used here value error 
+# ValueError, etc)] -- we used here value error
 # ... Traceback [gives you the line to look for the Code in This
 # line]. raise [keyword used to raise your own Exep]
 # ================================================================#

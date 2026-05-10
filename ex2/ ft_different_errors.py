@@ -10,7 +10,7 @@ def garden_operations(operation_number: int) -> None:
         open("/non/existent/file")
 
     elif operation_number == 3:
-        result = "sensor" + 0
+        result = "sensor" + 0  # type: ignore[operator]
         print(result)
 
 
@@ -36,9 +36,10 @@ def test_error_types() -> None:
         except TypeError as error:
             print(f"Caught TypeError: {error}")
 
-        finally:
-            print()
+        # finally:
+        #     print()
 
+    print()
     print("All error types tested successfully!")
 
 
